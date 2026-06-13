@@ -1,0 +1,554 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================
+   DESIGN TOKENS – Maison Olakpé
+   Palette raffinée : tons chauds, terreux, luxe artisanal
+   ============================================ */
+
+:root {
+  /* ============================================
+     PALETTE RAFFINÉE – Échelles OKLCH-inspired
+     Perceptuellement uniformes, tons chauds
+     ============================================ */
+
+  /* ── Or (accent principal) ── */
+  --color-or-50:  #FDF8EF;
+  --color-or-100: #F7E8C8;
+  --color-or-200: #EFD59E;
+  --color-or-300: #E6C074;
+  --color-or-400: #D9AC4E;
+  --color-or:      #C8962E;
+  --color-or-600:  #A67B20;
+  --color-or-700:  #846016;
+  --color-or-800:  #62470F;
+  --color-or-900:  #403009;
+
+  /* ── Vert (nature, bio, succès) ── */
+  --color-vert:      #2D6A4F;
+  --color-vert-100:  #C9E8D7;
+  --color-vert-600:  #1E4A35;
+  --color-vert-700:  #153526;
+
+  /* ── Terre (terracotta, chaleur) ── */
+  --color-terre:      #A03B1F;
+  --color-terre-100:  #F8D8CF;
+  --color-terre-400:  #D46A4A;
+  --color-terre-600:  #7A2D17;
+  --color-terre-700:  #5C2211;
+
+  /* ── Violet (mystère, parfums) ── */
+  --color-violet:      #5C275E;
+  --color-violet-100:  #E8D8F0;
+  --color-violet-600:  #3E1A3F;
+  --color-violet-700:  #2D132E;
+
+  /* ── Bordeaux (erreurs, promos) ── */
+  --color-bordeaux:      #8B1A2F;
+  --color-bordeaux-100:  #F8D2D8;
+  --color-bordeaux-600:  #6B1424;
+  --color-bordeaux-700:  #500F1B;
+
+  /* ── Neutres chauds ── */
+  --color-ivoire:      #F9F3E6;
+  --color-ivoire-300:  #F0E8D5;
+  --color-ivoire-400:  #E8DCC8;
+  --color-ivoire-500:  #D9C9A8;
+  --color-sable:       #D4A96A;
+  --color-sable-300:   #E0C48A;
+  --color-sable-500:   #B8944A;
+  --color-sable-600:   #967836;
+  --color-nuit:        #1A1A2E;
+  --color-nuit-50:     #E8E8F0;
+  --color-nuit-600:    #141424;
+  --color-nuit-700:    #0F0F1B;
+  --color-creme:       #FEFEFE;
+
+  /* ── Tokens sémantiques ── */
+  --surface-primary:   #FEFEFE;
+  --surface-secondary: #F9F3E6;
+  --surface-tertiary:  #F0E8D5;
+  --text-primary:      #1A1A2E;
+  --text-secondary:    rgba(26, 26, 46, 0.62);
+  --text-tertiary:     rgba(26, 26, 46, 0.42);
+  --text-inverse:      #FEFEFE;
+  --border-default:    #E8DCC8;
+  --border-hover:      rgba(200, 150, 46, 0.30);
+  --border-strong:     rgba(200, 150, 46, 0.55);
+  --border-muted:      rgba(232, 220, 200, 0.5);
+
+  /* ── Ombres (5 niveaux) ── */
+  --shadow-xs: 0 1px 2px rgba(26, 26, 46, 0.03);
+  --shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.04), 0 1px 2px rgba(26, 26, 46, 0.03);
+  --shadow-md: 0 4px 6px -1px rgba(26, 26, 46, 0.06), 0 2px 4px -2px rgba(26, 26, 46, 0.04);
+  --shadow-lg: 0 10px 15px -3px rgba(26, 26, 46, 0.08), 0 4px 6px -4px rgba(26, 26, 46, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(26, 26, 46, 0.1), 0 8px 10px -6px rgba(26, 26, 46, 0.04);
+  --shadow-glow: 0 0 20px rgba(200, 150, 46, 0.22);
+  --shadow-glow-lg: 0 0 40px rgba(200, 150, 46, 0.30);
+
+  /* ── Rayons ── */
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* ── Transitions ── */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Dark mode ── */
+.dark {
+  --surface-primary: #141424;
+  --surface-secondary: rgba(26, 26, 46, 0.5);
+  --surface-tertiary: rgba(26, 26, 46, 0.3);
+  --text-primary: #FEFEFE;
+  --text-secondary: rgba(254, 254, 254, 0.62);
+  --text-tertiary: rgba(254, 254, 254, 0.42);
+  --text-inverse: #1A1A2E;
+  --border-default: rgba(232, 220, 200, 0.10);
+  --border-hover: rgba(200, 150, 46, 0.25);
+  --border-strong: rgba(200, 150, 46, 0.45);
+  --border-muted: rgba(232, 220, 200, 0.06);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px rgba(200, 150, 46, 0.2);
+  --shadow-glow-lg: 0 0 45px rgba(200, 150, 46, 0.25);
+}
+
+/* ============================================
+   BASE
+   ============================================ */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lato', 'Open Sans', system-ui, sans-serif;
+  color: var(--text-primary);
+  background-color: var(--surface-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Sélection élégante */
+::selection {
+  background-color: rgba(200, 150, 46, 0.25);
+  color: var(--text-primary);
+}
+
+/* Focus visible accessible */
+:focus-visible {
+  outline: 2px solid var(--color-or);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ============================================
+   TYPOGRAPHY PLUGIN – Thème Luxe Maison Olakpé
+   ============================================ */
+
+@utility prose-olakpe {
+  --tw-prose-body: var(--text-primary);
+  --tw-prose-headings: var(--color-nuit);
+  --tw-prose-lead: var(--text-secondary);
+  --tw-prose-links: var(--color-or-dark);
+  --tw-prose-bold: var(--color-nuit);
+  --tw-prose-counters: var(--color-or);
+  --tw-prose-bullets: var(--color-sable);
+  --tw-prose-hr: var(--border-default);
+  --tw-prose-quotes: var(--color-nuit);
+  --tw-prose-quote-borders: var(--color-or);
+  --tw-prose-captions: var(--text-tertiary);
+  --tw-prose-code: var(--color-nuit);
+  --tw-prose-pre-code: var(--color-creme);
+  --tw-prose-pre-bg: var(--color-nuit);
+  --tw-prose-th-borders: var(--border-default);
+  --tw-prose-td-borders: var(--border-default);
+
+  --tw-prose-invert-body: var(--text-secondary);
+  --tw-prose-invert-headings: var(--color-creme);
+  --tw-prose-invert-lead: var(--text-tertiary);
+  --tw-prose-invert-links: var(--color-or-light);
+  --tw-prose-invert-bold: var(--color-creme);
+  --tw-prose-invert-counters: var(--color-or-light);
+  --tw-prose-invert-bullets: var(--color-sable-dark);
+  --tw-prose-invert-hr: var(--border-default);
+  --tw-prose-invert-quotes: var(--color-creme);
+  --tw-prose-invert-quote-borders: var(--color-or);
+  --tw-prose-invert-captions: var(--text-tertiary);
+  --tw-prose-invert-code: var(--color-creme);
+  --tw-prose-invert-pre-code: var(--color-creme);
+  --tw-prose-invert-pre-bg: rgba(0, 0, 0, 0.4);
+  --tw-prose-invert-th-borders: var(--border-default);
+  --tw-prose-invert-td-borders: var(--border-default);
+
+  max-width: 65ch;
+  font-family: 'Lato', system-ui, sans-serif;
+  line-height: 1.75;
+}
+
+/* ============================================
+   COMPONENTS – Boutons, Cartes, Badges
+   ============================================ */
+
+/* Bouton principal – gradient or → terre */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(135deg, #C8962E, #A03B1F);
+  color: #FEFEFE;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+}
+
+.btn-primary:hover {
+  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  transform: translateY(-1px);
+}
+
+.btn-primary:hover::after {
+  opacity: 1;
+}
+
+.btn-primary:active {
+  transform: scale(0.97);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Bouton secondaire – outline or */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid #C8962E;
+  color: #C8962E;
+  background: transparent;
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  text-decoration: none;
+  transition: all var(--transition-base);
+}
+
+.btn-secondary:hover {
+  background: #C8962E;
+  color: #FEFEFE;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: scale(0.97);
+}
+
+/* Bouton fantôme */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  color: var(--text-primary);
+  font-size: 0.875rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  background: var(--surface-secondary);
+  color: var(--color-or);
+}
+
+/* Carte */
+.card {
+  background: var(--surface-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-default);
+  transition: all var(--transition-base);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-lg);
+  border-color: var(--border-hover);
+}
+
+.card-hover:hover {
+  transform: translateY(-2px);
+}
+
+/* Badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: var(--radius-full);
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-size: 0.688rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.badge-new {
+  background: #2D6A4F;
+  color: #FEFEFE;
+}
+
+.badge-promo {
+  background: #A03B1F;
+  color: #FEFEFE;
+}
+
+.badge-best-seller {
+  background: #D4A96A;
+  color: #1A1A2E;
+}
+
+.badge-bio {
+  background: rgba(45, 106, 79, 0.1);
+  color: #2D6A4F;
+}
+
+.badge-artisanal {
+  background: rgba(92, 39, 94, 0.1);
+  color: #5C275E;
+}
+
+/* ============================================
+   TITRES DE SECTION
+   ============================================ */
+
+.section-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+/* ============================================
+   TOASTS
+   ============================================ */
+
+.toast-success {
+  background: #2D6A4F;
+  color: #FEFEFE;
+}
+
+.toast-error {
+  background: #8B1A2F;
+  color: #FEFEFE;
+}
+
+.toast-info {
+  background: #5C275E;
+  color: #FEFEFE;
+}
+
+/* ============================================
+   PATTERN DÉCORATIF
+   ============================================ */
+
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C8962E' fill-opacity='0.08'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loader */
+.loader-pepper {
+  width: 48px;
+  height: 48px;
+  border: 3px solid #F9F3E6;
+  border-bottom-color: #C8962E;
+  border-radius: 50%;
+  display: inline-block;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Toast animations */
+.toast-enter {
+  animation: toastIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.toast-exit {
+  animation: toastOut 0.3s cubic-bezier(0.4, 0, 1, 1) forwards;
+}
+
+@keyframes toastIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes toastOut {
+  from {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--surface-secondary) 25%,
+    var(--surface-tertiary) 50%,
+    var(--surface-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================
+   ACCESSIBILITÉ – Reduced Motion
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .loader-pepper {
+    animation: none;
+    border-bottom-color: transparent;
+  }
+
+  .skeleton {
+    animation: none;
+    background: var(--surface-secondary);
+  }
+}
+
+/* ============================================
+   UTILITAIRES
+   ============================================ */
+
+/* Masquer visuellement mais garder accessible aux lecteurs d'écran */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Désactiver les animations quand l'utilisateur préfère la réduction de mouvement */
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe\:animate-fade-up,
+  .motion-safe\:animate-fade-in,
+  .motion-safe\:animate-scale-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
