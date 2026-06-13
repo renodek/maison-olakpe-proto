@@ -87,7 +87,7 @@ export default function ProductCard({ product }: { product: Product }) {
           {/* Bouton ajout panier */}
           <button
             onClick={handleAddToCart}
-            className="absolute bottom-3 right-3 w-10 h-10 bg-creme/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-or hover:text-creme hover:scale-110 active:scale-90 text-or"
+            className="absolute bottom-3 right-3 w-10 h-10 bg-creme/90 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 hover:bg-rouge hover:text-blanc hover:scale-110 active:scale-90 text-rouge"
             aria-label={`Ajouter ${product.nom} au panier`}
           >
             <Plus className="w-5 h-5" />
@@ -107,7 +107,7 @@ export default function ProductCard({ product }: { product: Product }) {
           </div>
 
           {/* Nom */}
-          <h3 className="font-sans font-bold text-nuit dark:text-creme text-sm mb-1 line-clamp-2 group-hover:text-or transition-colors">
+          <h3 className="font-sans font-bold text-nuit dark:text-creme text-sm mb-1 line-clamp-2 group-hover:text-rouge transition-colors">
             {product.nom}
           </h3>
 
@@ -122,7 +122,7 @@ export default function ProductCard({ product }: { product: Product }) {
           {/* Prix + stock */}
           <div className="flex items-center justify-between mt-3 pt-3 border-t border-sable/10">
             <div className="flex items-baseline gap-2">
-              <span className="font-display font-bold text-lg text-or">
+              <span className="font-display font-bold text-lg text-jaune">
                 {product.prix.toFixed(2)} €
               </span>
               {product.prixBarre && (

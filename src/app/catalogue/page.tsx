@@ -62,7 +62,7 @@ function CatalogueContent() {
     <>
       {/* Fil d'Ariane */}
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans flex items-center gap-1.5">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <span>/</span>
         <span className="text-nuit dark:text-creme font-medium">Catalogue</span>
       </nav>
@@ -80,7 +80,7 @@ function CatalogueContent() {
                   placeholder="Rechercher..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all"
+                  className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all"
                 />
                 {search && (
                   <button
@@ -105,7 +105,7 @@ function CatalogueContent() {
                     onClick={() => setCategorieActive(cat.slug)}
                     className={`block w-full text-left px-3 py-2 rounded-lg text-sm transition-all active:scale-[0.98] ${
                       categorieActive === cat.slug
-                        ? 'bg-or/10 text-or font-bold'
+                        ? 'bg-rouge/10 text-rouge font-bold'
                         : 'text-nuit/70 dark:text-creme/70 hover:bg-ivoire dark:hover:bg-nuit-light'
                     }`}
                   >
@@ -127,11 +127,11 @@ function CatalogueContent() {
                 step={5}
                 value={prixRange[1]}
                 onChange={(e) => setPrixRange([0, Number(e.target.value)])}
-                className="w-full accent-or"
+                className="w-full accent-rouge"
               />
               <div className="flex justify-between text-xs text-nuit/50 dark:text-creme/50 mt-1">
                 <span>0 €</span>
-                <span className="font-bold text-or">{prixRange[1]} €</span>
+                <span className="font-bold text-jaune">{prixRange[1]} €</span>
               </div>
             </div>
           </div>
@@ -152,7 +152,7 @@ function CatalogueContent() {
             <div className="flex items-center gap-3">
               <button
                 onClick={() => setMobileFilter(!mobileFilter)}
-                className="lg:hidden btn-ghost text-or border border-sable/20 inline-flex items-center gap-1.5 active:scale-95 transition-transform"
+                className="lg:hidden btn-ghost text-rouge border border-sable/20 inline-flex items-center gap-1.5 active:scale-95 transition-transform"
               >
                 <SlidersHorizontal className="w-4 h-4" />
                 Filtrer
@@ -161,7 +161,7 @@ function CatalogueContent() {
                 <select
                   value={tri}
                   onChange={(e) => setTri(e.target.value)}
-                  className="appearance-none bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg pl-3 pr-8 py-2 text-sm text-nuit dark:text-creme focus:outline-none focus:border-or cursor-pointer"
+                  className="appearance-none bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg pl-3 pr-8 py-2 text-sm text-nuit dark:text-creme focus:outline-none focus:border-rouge cursor-pointer"
                 >
                   <option value="default">Tri par défaut</option>
                   <option value="prix-asc">Prix croissant</option>
@@ -184,7 +184,7 @@ function CatalogueContent() {
                   placeholder="Rechercher..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-or"
+                  className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-rouge"
                 />
               </div>
               <div className="flex flex-wrap gap-2">
@@ -197,7 +197,7 @@ function CatalogueContent() {
                     }}
                     className={`px-3 py-1.5 rounded-full text-xs font-bold transition-all active:scale-95 ${
                       categorieActive === cat.slug
-                        ? 'bg-or text-creme'
+                        ? 'bg-rouge text-blanc'
                         : 'bg-creme dark:bg-nuit text-nuit/70 border border-sable/20'
                     }`}
                   >
@@ -216,7 +216,7 @@ function CatalogueContent() {
                 onClick={() => setCategorieActive(cat.slug)}
                 className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all hover:scale-105 active:scale-95 ${
                   categorieActive === cat.slug
-                    ? 'bg-or text-creme shadow-md'
+                    ? 'bg-rouge text-blanc shadow-md'
                     : 'bg-ivoire dark:bg-nuit-light text-nuit/60 dark:text-creme/60 hover:bg-sable/20'
                 }`}
               >

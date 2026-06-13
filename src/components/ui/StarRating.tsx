@@ -21,13 +21,13 @@ export default function StarRating({ note, small = false, showCount = true }: St
       {Array.from({ length: fullStars }).map((_, i) => (
         <Star
           key={`full-${i}`}
-          className={cn('fill-or text-or', small ? 'w-3.5 h-3.5' : 'w-4 h-4')}
+          className={cn('fill-jaune text-jaune', small ? 'w-3.5 h-3.5' : 'w-4 h-4')}
           strokeWidth={1.5}
         />
       ))}
       {hasHalf && (
         <StarHalf
-          className={cn('fill-or text-or', small ? 'w-3.5 h-3.5' : 'w-4 h-4')}
+          className={cn('fill-jaune text-jaune', small ? 'w-3.5 h-3.5' : 'w-4 h-4')}
           strokeWidth={1.5}
         />
       )}

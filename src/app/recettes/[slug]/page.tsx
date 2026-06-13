@@ -50,9 +50,9 @@ export default function RecipeDetailPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans flex items-center gap-1.5">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <ChevronRight className="w-3 h-3" />
-        <Link href="/recettes" className="hover:text-or transition-colors">Recettes</Link>
+        <Link href="/recettes" className="hover:text-rouge transition-colors">Recettes</Link>
         <ChevronRight className="w-3 h-3" />
         <span className="text-nuit dark:text-creme font-medium">{recette.titre}</span>
       </nav>
@@ -92,7 +92,7 @@ export default function RecipeDetailPage() {
         <div className="md:col-span-1">
           <div className="p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50 sticky top-28">
             <h2 className="font-serif font-bold text-xl text-nuit dark:text-creme mb-4 flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-or" />
+              <ShoppingBag className="w-5 h-5 text-rouge" />
               Ingrédients
             </h2>
             <ul className="space-y-3">
@@ -117,7 +117,7 @@ export default function RecipeDetailPage() {
                       <Link
                         key={p.id}
                         href={`/catalogue/${p.slug}`}
-                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-or/5 transition-colors group"
+                        className="flex items-center gap-3 p-2 rounded-lg hover:bg-rouge/5 transition-colors group"
                       >
                         <Image
                           src={p.images[0]}
@@ -128,10 +128,10 @@ export default function RecipeDetailPage() {
                           quality={70}
                         />
                         <div className="flex-1 min-w-0">
-                          <p className="text-xs font-bold text-nuit dark:text-creme truncate group-hover:text-or transition-colors">
+                          <p className="text-xs font-bold text-nuit dark:text-creme truncate group-hover:text-rouge transition-colors">
                             {p.nom}
                           </p>
-                          <p className="text-xs text-or font-bold">
+                          <p className="text-xs text-rouge font-bold">
                             {p.prix.toFixed(2)} €
                           </p>
                         </div>
@@ -151,7 +151,7 @@ export default function RecipeDetailPage() {
           <ol className="space-y-6">
             {recette.etapes.map((etape, i) => (
               <li key={i} className="flex gap-4">
-                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-or to-terre text-creme flex items-center justify-center font-display font-bold text-sm shrink-0 mt-0.5 shadow-sm">
+                <span className="w-8 h-8 rounded-full bg-gradient-to-br from-rouge to-jaune text-creme flex items-center justify-center font-display font-bold text-sm shrink-0 mt-0.5 shadow-sm">
                   {i + 1}
                 </span>
                 <p className="text-nuit/70 dark:text-creme/70 leading-relaxed pt-1">
@@ -162,10 +162,10 @@ export default function RecipeDetailPage() {
           </ol>
 
           {recette.astuce && (
-            <div className="mt-10 p-6 rounded-xl bg-or/5 border border-or/20 flex gap-3">
-              <Lightbulb className="w-6 h-6 text-or shrink-0 mt-0.5" />
+            <div className="mt-10 p-6 rounded-xl bg-rouge/5 border border-rouge/20 flex gap-3">
+              <Lightbulb className="w-6 h-6 text-rouge shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-serif font-bold text-lg text-or mb-2">
+                <h3 className="font-serif font-bold text-lg text-rouge mb-2">
                   Astuce du chef
                 </h3>
                 <p className="text-nuit/70 dark:text-creme/70 leading-relaxed">

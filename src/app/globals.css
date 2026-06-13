@@ -9,83 +9,80 @@
 
 :root {
   /* ============================================
-     PALETTE RAFFINÉE – Échelles OKLCH-inspired
-     Perceptuellement uniformes, tons chauds
+     PALETTE – Maison Olakpé (CDC v0.1)
+     Couleurs dominantes : Rouge cardinal, Jaune or vif
      ============================================ */
 
-  /* ── Or (accent principal) ── */
-  --color-or-50:  #FDF8EF;
-  --color-or-100: #F7E8C8;
-  --color-or-200: #EFD59E;
-  --color-or-300: #E6C074;
-  --color-or-400: #D9AC4E;
+  /* ── Rouge cardinal (DOMINANTE — CTA, titres H1, header) ── */
+  --color-rouge:       #CC0000;
+  --color-rouge-50:    #FFF5F5;
+  --color-rouge-100:   #FFD4D4;
+  --color-rouge-400:   #E53935;
+  --color-rouge-600:   #A30000;
+  --color-rouge-700:   #7A0000;
+
+  /* ── Jaune or vif (DOMINANTE — badges, prix, bordures, hover) ── */
+  --color-jaune:       #F5C000;
+  --color-jaune-50:    #FFFBE5;
+  --color-jaune-100:   #FFF3B3;
+  --color-jaune-400:   #FFD31A;
+  --color-jaune-600:   #C49A00;
+  --color-jaune-700:   #937300;
+
+  /* ── Or chaud (secondaire — prix, CTA secondaires, dégradés) ── */
   --color-or:      #C8962E;
+  --color-or-100:  #F7E8C8;
+  --color-or-400:  #D9AC4E;
   --color-or-600:  #A67B20;
   --color-or-700:  #846016;
-  --color-or-800:  #62470F;
-  --color-or-900:  #403009;
 
-  /* ── Vert (nature, bio, succès) ── */
+  /* ── Vert profond (catégorie épices, badges Nouveau, succès) ── */
   --color-vert:      #2D6A4F;
   --color-vert-100:  #C9E8D7;
   --color-vert-600:  #1E4A35;
-  --color-vert-700:  #153526;
 
-  /* ── Terre (terracotta, chaleur) ── */
-  --color-terre:      #A03B1F;
-  --color-terre-100:  #F8D8CF;
-  --color-terre-400:  #D46A4A;
-  --color-terre-600:  #7A2D17;
-  --color-terre-700:  #5C2211;
-
-  /* ── Violet (mystère, parfums) ── */
+  /* ── Violet oriental (bandeau header, tags parfums) ── */
   --color-violet:      #5C275E;
   --color-violet-100:  #E8D8F0;
   --color-violet-600:  #3E1A3F;
-  --color-violet-700:  #2D132E;
 
-  /* ── Bordeaux (erreurs, promos) ── */
+  /* ── Bordeaux épicé (hover secondaire carte produit) ── */
   --color-bordeaux:      #8B1A2F;
   --color-bordeaux-100:  #F8D2D8;
   --color-bordeaux-600:  #6B1424;
-  --color-bordeaux-700:  #500F1B;
 
   /* ── Neutres chauds ── */
   --color-ivoire:      #F9F3E6;
   --color-ivoire-300:  #F0E8D5;
   --color-ivoire-400:  #E8DCC8;
-  --color-ivoire-500:  #D9C9A8;
   --color-sable:       #D4A96A;
   --color-sable-300:   #E0C48A;
   --color-sable-500:   #B8944A;
-  --color-sable-600:   #967836;
   --color-nuit:        #1A1A2E;
-  --color-nuit-50:     #E8E8F0;
   --color-nuit-600:    #141424;
-  --color-nuit-700:    #0F0F1B;
-  --color-creme:       #FEFEFE;
+  --color-blanc:       #FFFFFF;
 
   /* ── Tokens sémantiques ── */
-  --surface-primary:   #FEFEFE;
+  --surface-primary:   #FFFFFF;
   --surface-secondary: #F9F3E6;
   --surface-tertiary:  #F0E8D5;
   --text-primary:      #1A1A2E;
   --text-secondary:    rgba(26, 26, 46, 0.62);
   --text-tertiary:     rgba(26, 26, 46, 0.42);
-  --text-inverse:      #FEFEFE;
+  --text-inverse:      #FFFFFF;
   --border-default:    #E8DCC8;
-  --border-hover:      rgba(200, 150, 46, 0.30);
-  --border-strong:     rgba(200, 150, 46, 0.55);
+  --border-hover:      rgba(204, 0, 0, 0.25);
+  --border-strong:     rgba(245, 192, 0, 0.50);
   --border-muted:      rgba(232, 220, 200, 0.5);
 
-  /* ── Ombres (5 niveaux) ── */
+  /* ── Ombres ── */
   --shadow-xs: 0 1px 2px rgba(26, 26, 46, 0.03);
   --shadow-sm: 0 1px 3px rgba(26, 26, 46, 0.04), 0 1px 2px rgba(26, 26, 46, 0.03);
   --shadow-md: 0 4px 6px -1px rgba(26, 26, 46, 0.06), 0 2px 4px -2px rgba(26, 26, 46, 0.04);
   --shadow-lg: 0 10px 15px -3px rgba(26, 26, 46, 0.08), 0 4px 6px -4px rgba(26, 26, 46, 0.04);
   --shadow-xl: 0 20px 25px -5px rgba(26, 26, 46, 0.1), 0 8px 10px -6px rgba(26, 26, 46, 0.04);
-  --shadow-glow: 0 0 20px rgba(200, 150, 46, 0.22);
-  --shadow-glow-lg: 0 0 40px rgba(200, 150, 46, 0.30);
+  --shadow-glow-rouge: 0 0 20px rgba(204, 0, 0, 0.22);
+  --shadow-glow-jaune: 0 0 20px rgba(245, 192, 0, 0.22);
 
   /* ── Rayons ── */
   --radius-xs: 0.25rem;
@@ -108,21 +105,21 @@
   --surface-primary: #141424;
   --surface-secondary: rgba(26, 26, 46, 0.5);
   --surface-tertiary: rgba(26, 26, 46, 0.3);
-  --text-primary: #FEFEFE;
-  --text-secondary: rgba(254, 254, 254, 0.62);
-  --text-tertiary: rgba(254, 254, 254, 0.42);
+  --text-primary: #FFFFFF;
+  --text-secondary: rgba(255, 255, 255, 0.62);
+  --text-tertiary: rgba(255, 255, 255, 0.42);
   --text-inverse: #1A1A2E;
   --border-default: rgba(232, 220, 200, 0.10);
-  --border-hover: rgba(200, 150, 46, 0.25);
-  --border-strong: rgba(200, 150, 46, 0.45);
+  --border-hover: rgba(245, 192, 0, 0.25);
+  --border-strong: rgba(245, 192, 0, 0.45);
   --border-muted: rgba(232, 220, 200, 0.06);
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.2);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4);
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 25px rgba(200, 150, 46, 0.2);
-  --shadow-glow-lg: 0 0 45px rgba(200, 150, 46, 0.25);
+  --shadow-glow-rouge: 0 0 25px rgba(204, 0, 0, 0.2);
+  --shadow-glow-jaune: 0 0 25px rgba(245, 192, 0, 0.2);
 }
 
 /* ============================================
@@ -202,15 +199,15 @@ body {
    COMPONENTS – Boutons, Cartes, Badges
    ============================================ */
 
-/* Bouton principal – gradient or → terre */
+/* Bouton principal – gradient Rouge cardinal → Jaune or vif */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  background: linear-gradient(135deg, #C8962E, #A03B1F);
-  color: #FEFEFE;
+  background: linear-gradient(135deg, #CC0000, #F5C000);
+  color: #FFFFFF;
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700;
   font-size: 0.875rem;
@@ -236,7 +233,7 @@ body {
 }
 
 .btn-primary:hover {
-  box-shadow: var(--shadow-lg), var(--shadow-glow);
+  box-shadow: var(--shadow-lg), var(--shadow-glow-rouge);
   transform: translateY(-1px);
 }
 
@@ -249,15 +246,15 @@ body {
   box-shadow: var(--shadow-sm);
 }
 
-/* Bouton secondaire – outline or */
+/* Bouton secondaire – outline Rouge cardinal */
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
   padding: 0.75rem 1.5rem;
-  border: 2px solid #C8962E;
-  color: #C8962E;
+  border: 2px solid #CC0000;
+  color: #CC0000;
   background: transparent;
   font-family: 'Montserrat', system-ui, sans-serif;
   font-weight: 700;
@@ -271,8 +268,8 @@ body {
 }
 
 .btn-secondary:hover {
-  background: #C8962E;
-  color: #FEFEFE;
+  background: #CC0000;
+  color: #FFFFFF;
   box-shadow: var(--shadow-md);
   transform: translateY(-1px);
 }
@@ -336,16 +333,16 @@ body {
 
 .badge-new {
   background: #2D6A4F;
-  color: #FEFEFE;
+  color: #FFFFFF;
 }
 
 .badge-promo {
-  background: #A03B1F;
-  color: #FEFEFE;
+  background: #CC0000;
+  color: #FFFFFF;
 }
 
 .badge-best-seller {
-  background: #D4A96A;
+  background: #F5C000;
   color: #1A1A2E;
 }
 
@@ -385,17 +382,17 @@ body {
 
 .toast-success {
   background: #2D6A4F;
-  color: #FEFEFE;
+  color: #FFFFFF;
 }
 
 .toast-error {
-  background: #8B1A2F;
-  color: #FEFEFE;
+  background: #CC0000;
+  color: #FFFFFF;
 }
 
 .toast-info {
-  background: #5C275E;
-  color: #FEFEFE;
+  background: #F5C000;
+  color: #1A1A2E;
 }
 
 /* ============================================

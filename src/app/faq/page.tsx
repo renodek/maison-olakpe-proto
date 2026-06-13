@@ -11,14 +11,14 @@ export default function FAQPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans flex items-center gap-1.5">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <ChevronRight className="w-3 h-3" />
         <span className="text-nuit dark:text-creme font-medium">FAQ</span>
       </nav>
 
       <div className="animate-fade-in">
         <h1 className="font-serif text-3xl font-bold text-nuit dark:text-creme mb-2 flex items-center gap-2">
-          <HelpCircle className="w-7 h-7 text-or" />
+          <HelpCircle className="w-7 h-7 text-rouge" />
           Foire aux Questions
         </h1>
         <p className="text-nuit/60 dark:text-creme/60 mb-10">
@@ -37,7 +37,7 @@ export default function FAQPage() {
               <span className="font-sans font-bold text-sm text-nuit dark:text-creme pr-4">
                 {item.question}
               </span>
-              <span className={`text-or shrink-0 transition-transform duration-200 ${openId === item.id ? 'rotate-180' : ''}`}>
+              <span className={`text-rouge shrink-0 transition-transform duration-200 ${openId === item.id ? 'rotate-180' : ''}`}>
                 <ChevronDown className="w-5 h-5" />
               </span>
             </button>
@@ -55,7 +55,7 @@ export default function FAQPage() {
       </div>
 
       <div className="mt-12 p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50 text-center">
-        <MessageCircle className="w-8 h-8 text-or/40 mx-auto mb-3" />
+        <MessageCircle className="w-8 h-8 text-rouge/40 mx-auto mb-3" />
         <p className="text-nuit/70 dark:text-creme/70 text-sm mb-4">
           Vous n&apos;avez pas trouvé votre réponse ?
         </p>

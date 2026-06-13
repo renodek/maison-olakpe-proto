@@ -32,7 +32,7 @@ export default function AboutPage() {
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Fil d'Ariane */}
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans flex items-center gap-1.5">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <ChevronRight className="w-3 h-3" />
         <span className="text-nuit dark:text-creme font-medium">À propos</span>
       </nav>
@@ -84,9 +84,9 @@ export default function AboutPage() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {valeurs.map((v, i) => (
-            <div key={i} className="card p-6 text-center group hover:border-or/30">
-              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-or/10 flex items-center justify-center group-hover:bg-or/20 transition-colors">
-                <v.icon className="w-7 h-7 text-or" strokeWidth={1.5} />
+            <div key={i} className="card p-6 text-center group hover:border-rouge/30">
+              <div className="w-14 h-14 mx-auto mb-4 rounded-2xl bg-rouge/10 flex items-center justify-center group-hover:bg-rouge/20 transition-colors">
+                <v.icon className="w-7 h-7 text-rouge" strokeWidth={1.5} />
               </div>
               <h3 className="font-serif font-bold text-lg text-nuit dark:text-creme mb-2">
                 {v.title}
@@ -100,7 +100,7 @@ export default function AboutPage() {
       </ScrollReveal>
 
       <ScrollReveal>
-        <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-or to-terre text-creme text-center relative overflow-hidden">
+        <div className="mt-12 p-8 rounded-2xl bg-gradient-to-r from-rouge to-jaune text-creme text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-pattern opacity-20" />
           <div className="relative">
             <h2 className="font-serif text-2xl font-bold mb-3">

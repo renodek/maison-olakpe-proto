@@ -51,10 +51,10 @@ export default function Footer() {
           {/* Marque */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4 group">
-              <div className="w-10 h-10 bg-gradient-to-br from-or to-terre rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
-                <span className="font-serif font-bold text-creme text-xl">MO</span>
+              <div className="w-10 h-10 bg-gradient-to-br from-rouge to-jaune rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform">
+                <span className="font-serif font-bold text-blanc text-xl">MO</span>
               </div>
-              <span className="font-serif font-bold text-creme text-lg group-hover:text-or transition-colors">
+              <span className="font-serif font-bold text-creme text-lg group-hover:text-jaune transition-colors">
                 Maison Olakpé
               </span>
             </Link>
@@ -69,7 +69,7 @@ export default function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-9 h-9 rounded-full bg-creme/10 hover:bg-or flex items-center justify-center text-creme/70 hover:text-creme hover:scale-110 active:scale-90 transition-all"
+                  className="w-9 h-9 rounded-full bg-creme/10 hover:bg-rouge flex items-center justify-center text-creme/70 hover:text-blanc hover:scale-110 active:scale-90 transition-all"
                   aria-label={social.name}
                 >
                   {social.icon}
@@ -80,7 +80,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-or mb-4">
+            <h3 className="font-display text-xs uppercase tracking-widest text-jaune mb-4">
               Navigation
             </h3>
             <ul className="space-y-2 text-sm">
@@ -88,7 +88,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-or transition-colors inline-flex items-center gap-1 group"
+                    className="hover:text-jaune transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.label}
                     <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -100,7 +100,7 @@ export default function Footer() {
 
           {/* Service Client */}
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-or mb-4">
+            <h3 className="font-display text-xs uppercase tracking-widest text-jaune mb-4">
               Service Client
             </h3>
             <ul className="space-y-2 text-sm">
@@ -108,7 +108,7 @@ export default function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="hover:text-or transition-colors inline-flex items-center gap-1 group"
+                    className="hover:text-jaune transition-colors inline-flex items-center gap-1 group"
                   >
                     {link.label}
                     <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
@@ -120,7 +120,7 @@ export default function Footer() {
 
           {/* Newsletter */}
           <div>
-            <h3 className="font-display text-xs uppercase tracking-widest text-or mb-4">
+            <h3 className="font-display text-xs uppercase tracking-widest text-jaune mb-4">
               Newsletter
             </h3>
             <p className="text-sm text-creme/60 mb-4">
@@ -133,11 +133,11 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="votre@email.com"
-                className="flex-1 bg-creme/10 border border-creme/20 rounded-lg px-3 py-2 text-sm text-creme placeholder:text-creme/30 focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all"
+                className="flex-1 bg-creme/10 border border-creme/20 rounded-lg px-3 py-2 text-sm text-creme placeholder:text-creme/30 focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all"
               />
               <button
                 type="submit"
-                className="bg-or hover:bg-or-dark text-creme px-4 py-2 rounded-lg text-sm font-display font-bold uppercase tracking-wider hover:scale-105 active:scale-95 transition-all"
+                className="bg-rouge hover:bg-rouge-600 text-blanc px-4 py-2 rounded-lg text-sm font-display font-bold uppercase tracking-wider hover:scale-105 active:scale-95 transition-all"
               >
                 <Send className="w-4 h-4" />
               </button>

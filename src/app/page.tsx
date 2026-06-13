@@ -128,7 +128,7 @@ export default function HomePage() {
               key={i}
               onClick={() => setCurrentSlide(i)}
               className={`relative h-2 rounded-full transition-all duration-500 ${
-                i === currentSlide ? 'w-10 bg-or' : 'w-2 bg-creme/40 hover:bg-creme/70'
+                i === currentSlide ? 'w-10 bg-jaune' : 'w-2 bg-creme/40 hover:bg-creme/70'
               }`}
               aria-label={`Diapositive ${i + 1}`}
               aria-current={i === currentSlide ? 'true' : 'false'}
@@ -168,7 +168,7 @@ export default function HomePage() {
                         {cat.nom}
                       </h3>
                       <p className="text-creme/70 text-sm mb-4 max-w-xs">{cat.description}</p>
-                      <span className="inline-flex items-center gap-1 text-or font-display text-sm font-bold uppercase tracking-wider group-hover:gap-3 transition-all">
+                      <span className="inline-flex items-center gap-1 text-jaune font-display text-sm font-bold uppercase tracking-wider group-hover:gap-3 transition-all">
                         Explorer
                         <ArrowRight className="w-4 h-4" />
                       </span>
@@ -191,7 +191,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/catalogue"
-                className="hidden sm:inline-flex items-center gap-1 btn-ghost text-or font-display font-bold uppercase text-sm tracking-wider group"
+                className="hidden sm:inline-flex items-center gap-1 btn-ghost text-rouge font-display font-bold uppercase text-sm tracking-wider group"
               >
                 Tout le catalogue
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -208,7 +208,7 @@ export default function HomePage() {
 
       {/* ============ PROMO BANNER ============ */}
       <ScrollReveal>
-        <section className="py-16 bg-gradient-to-r from-or via-or-dark to-terre relative overflow-hidden">
+        <section className="py-16 bg-gradient-to-r from-rouge via-rouge-600 to-jaune relative overflow-hidden">
           <div className="absolute inset-0 bg-pattern opacity-20" />
           <div className="absolute -top-20 -right-20 w-80 h-80 bg-creme/5 rounded-full blur-3xl" />
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-creme/5 rounded-full blur-3xl" />
@@ -228,7 +228,7 @@ export default function HomePage() {
               </div>
               <Link
                 href="/catalogue"
-                className="btn-primary bg-creme text-terre hover:bg-ivoire hover:text-terre-dark text-lg px-10 py-4 shadow-xl inline-flex items-center gap-2"
+                className="btn-primary bg-blanc text-rouge hover:bg-ivoire hover:text-rouge-600 text-lg px-10 py-4 shadow-xl inline-flex items-center gap-2"
               >
                 J&apos;en profite
                 <ArrowRight className="w-5 h-5" />
@@ -244,7 +244,7 @@ export default function HomePage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <h2 className="section-title inline-flex items-center gap-2">
-                <Sparkles className="w-6 h-6 text-or" />
+                <Sparkles className="w-6 h-6 text-jaune" />
                 Nouveautés
               </h2>
               <p className="section-subtitle">Les dernières pépites de nos artisans</p>
@@ -269,9 +269,9 @@ export default function HomePage() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {testimonials.map((t) => (
                 <div key={t.id} className="card p-6 relative hover:-translate-y-1 transition-transform">
-                  <Quote className="absolute top-4 right-4 w-8 h-8 text-or/15" />
+                  <Quote className="absolute top-4 right-4 w-8 h-8 text-rouge/15" />
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-or to-terre flex items-center justify-center text-creme font-serif font-bold text-lg shadow-md">
+                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-rouge to-jaune flex items-center justify-center text-creme font-serif font-bold text-lg shadow-md">
                       {t.prenom[0]}
                     </div>
                     <div>
@@ -294,7 +294,7 @@ export default function HomePage() {
       <ScrollReveal>
         <section className="py-20 bg-nuit text-creme relative overflow-hidden">
           <div className="absolute inset-0 bg-pattern opacity-10" />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-or/5 rounded-full blur-3xl" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-rouge/5 rounded-full blur-3xl" />
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
             <h2 className="font-serif text-3xl md:text-5xl font-bold mb-4">
               Nos Recettes Maison
@@ -320,8 +320,8 @@ export default function HomePage() {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 md:gap-12">
               {features.map((item, i) => (
                 <div key={i} className="text-center p-6 hover:-translate-y-1 transition-transform">
-                  <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-or/10 flex items-center justify-center">
-                    <item.icon className="w-8 h-8 text-or" strokeWidth={1.5} />
+                  <div className="w-16 h-16 mx-auto mb-5 rounded-2xl bg-rouge/10 flex items-center justify-center">
+                    <item.icon className="w-8 h-8 text-rouge" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-serif font-bold text-lg text-nuit dark:text-creme mb-3">
                     {item.title}

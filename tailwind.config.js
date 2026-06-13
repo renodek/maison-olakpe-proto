@@ -11,7 +11,39 @@ module.exports = {
          ============================================ */
 
       colors: {
-        /* ── Or (accent principal) ── */
+        /* ── Rouge cardinal (couleur dominante — CTA, titres H1, header) ── */
+        rouge: {
+          50:  "#FFF5F5",
+          100: "#FFD4D4",
+          200: "#FFA8A8",
+          300: "#FF7878",
+          400: "#E53935",
+          DEFAULT: "#CC0000", // 500
+          500: "#CC0000",
+          600: "#A30000",
+          700: "#7A0000",
+          800: "#520000",
+          900: "#290000",
+          950: "#140000",
+        },
+
+        /* ── Jaune or vif (couleur dominante — badges, prix, bordures, hover) ── */
+        jaune: {
+          50:  "#FFFBE5",
+          100: "#FFF3B3",
+          200: "#FFE980",
+          300: "#FFDE4D",
+          400: "#FFD31A",
+          DEFAULT: "#F5C000", // 500
+          500: "#F5C000",
+          600: "#C49A00",
+          700: "#937300",
+          800: "#624D00",
+          900: "#312600",
+          950: "#181300",
+        },
+
+        /* ── Or chaud (secondaire — prix, CTA secondaires, dégradés) ── */
         or: {
           50:  "#FDF8EF",
           100: "#F7E8C8",
@@ -177,8 +209,11 @@ module.exports = {
 
       /* ── Ombres ── */
       boxShadow: {
+        'glow-rouge': '0 0 20px rgba(204, 0, 0, 0.25)',
+        'glow-rouge-lg': '0 0 40px rgba(204, 0, 0, 0.35)',
+        'glow-jaune': '0 0 20px rgba(245, 192, 0, 0.25)',
+        'glow-jaune-lg': '0 0 40px rgba(245, 192, 0, 0.35)',
         'glow-or': '0 0 20px rgba(200, 150, 46, 0.25)',
-        'glow-or-lg': '0 0 40px rgba(200, 150, 46, 0.35)',
         'inner-glow': 'inset 0 1px 2px rgba(255, 255, 255, 0.1)',
       },
 
@@ -226,8 +261,8 @@ module.exports = {
           "50%": { transform: "scale(1.15)" },
         },
         pulseGlow: {
-          "0%, 100%": { boxShadow: "0 0 5px rgba(200, 150, 46, 0.3)" },
-          "50%": { boxShadow: "0 0 20px rgba(200, 150, 46, 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 5px rgba(245, 192, 0, 0.3)" },
+          "50%": { boxShadow: "0 0 20px rgba(245, 192, 0, 0.6)" },
         },
         countUp: {
           "0%": { opacity: "0", transform: "scale(0.5)" },

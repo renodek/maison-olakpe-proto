@@ -28,7 +28,7 @@ function RecipesContent() {
   return (
     <>
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans flex items-center gap-1.5">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <span>/</span>
         <span className="text-nuit dark:text-creme font-medium">Recettes</span>
       </nav>
@@ -50,7 +50,7 @@ function RecipesContent() {
             className={cn(
               'px-5 py-2 rounded-full text-sm font-bold transition-all hover:scale-105 active:scale-95',
               filter === f.key
-                ? 'bg-or text-creme shadow-md'
+                ? 'bg-rouge text-blanc shadow-md'
                 : 'bg-ivoire dark:bg-nuit-light text-nuit/60 dark:text-creme/60 hover:bg-sable/20'
             )}
           >
@@ -93,13 +93,13 @@ function RecipesContent() {
                       {recette.duree}
                     </span>
                   </div>
-                  <h3 className="font-serif font-bold text-lg text-nuit dark:text-creme mb-2 group-hover:text-or transition-colors">
+                  <h3 className="font-serif font-bold text-lg text-nuit dark:text-creme mb-2 group-hover:text-rouge transition-colors">
                     {recette.titre}
                   </h3>
                   <p className="text-xs text-nuit/50 dark:text-creme/50 line-clamp-2 leading-relaxed">
                     {recette.description}
                   </p>
-                  <span className="inline-flex items-center gap-1 text-or text-xs font-bold mt-3 group-hover:gap-2 transition-all">
+                  <span className="inline-flex items-center gap-1 text-rouge text-xs font-bold mt-3 group-hover:gap-2 transition-all">
                     Voir la recette
                     <ArrowRight className="w-3 h-3" />
                   </span>

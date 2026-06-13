@@ -36,7 +36,7 @@ export default function ContactPage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans flex items-center gap-1.5">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <ChevronRight className="w-3 h-3" />
         <span className="text-nuit dark:text-creme font-medium">Contact</span>
       </nav>
@@ -57,23 +57,23 @@ export default function ContactPage() {
               <div>
                 <label className="text-xs font-bold text-nuit/60 dark:text-creme/60 block mb-1.5">Nom *</label>
                 <input type="text" value={form.nom} onChange={(e) => setForm((f) => ({ ...f, nom: e.target.value }))} required
-                  className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all" placeholder="Votre nom" />
+                  className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all" placeholder="Votre nom" />
               </div>
               <div>
                 <label className="text-xs font-bold text-nuit/60 dark:text-creme/60 block mb-1.5">Email *</label>
                 <input type="email" value={form.email} onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))} required
-                  className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all" placeholder="votre@email.com" />
+                  className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all" placeholder="votre@email.com" />
               </div>
             </div>
             <div>
               <label className="text-xs font-bold text-nuit/60 dark:text-creme/60 block mb-1.5">Sujet</label>
               <input type="text" value={form.sujet} onChange={(e) => setForm((f) => ({ ...f, sujet: e.target.value }))}
-                className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all" placeholder="Sujet de votre message" />
+                className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all" placeholder="Sujet de votre message" />
             </div>
             <div>
               <label className="text-xs font-bold text-nuit/60 dark:text-creme/60 block mb-1.5">Message *</label>
               <textarea rows={5} value={form.message} onChange={(e) => setForm((f) => ({ ...f, message: e.target.value }))} required
-                className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all resize-none" placeholder="Votre message..." />
+                className="w-full bg-ivoire dark:bg-nuit-light border border-sable/20 rounded-lg px-3 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all resize-none" placeholder="Votre message..." />
             </div>
             <button type="submit" className="btn-primary inline-flex items-center gap-2 hover:scale-[1.02] active:scale-[0.97] transition-transform">
               {submitted ? (
@@ -94,13 +94,13 @@ export default function ContactPage() {
         <div className="space-y-6">
           <div className="p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50">
             <h3 className="font-serif font-bold text-lg text-nuit dark:text-creme mb-5 flex items-center gap-2">
-              <MessageSquare className="w-5 h-5 text-or" />
+              <MessageSquare className="w-5 h-5 text-rouge" />
               Nos coordonnées
             </h3>
             <div className="space-y-4">
               {coordonnees.map((item, i) => (
                 <div key={i} className="flex gap-3 text-sm">
-                  <item.icon className="w-5 h-5 text-or shrink-0 mt-0.5" />
+                  <item.icon className="w-5 h-5 text-rouge shrink-0 mt-0.5" />
                   <div>
                     <p className="text-xs text-nuit/50 dark:text-creme/50 mb-0.5">{item.label}</p>
                     <p className="text-nuit/70 dark:text-creme/70 font-medium">{item.value}</p>

@@ -7,7 +7,7 @@ export default function MentionsLegalesPage() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans">
-        <Link href="/" className="hover:text-or">Accueil</Link> / <span className="text-nuit dark:text-creme">Mentions légales</span>
+        <Link href="/" className="hover:text-rouge">Accueil</Link> / <span className="text-nuit dark:text-creme">Mentions légales</span>
       </nav>
       <h1 className="font-serif text-3xl font-bold text-nuit dark:text-creme mb-8">Mentions Légales</h1>
       <div className="p-8 rounded-xl bg-ivoire dark:bg-nuit-light/50 text-center">

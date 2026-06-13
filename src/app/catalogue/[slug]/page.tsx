@@ -93,11 +93,11 @@ export default function ProductDetailPage() {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       {/* Fil d'Ariane */}
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-8 font-sans flex items-center gap-1.5 flex-wrap">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <ChevronRight className="w-3 h-3" />
-        <Link href="/catalogue" className="hover:text-or transition-colors">Catalogue</Link>
+        <Link href="/catalogue" className="hover:text-rouge transition-colors">Catalogue</Link>
         <ChevronRight className="w-3 h-3" />
-        <Link href={`/catalogue?categorie=${product.categorie}`} className="hover:text-or transition-colors">
+        <Link href={`/catalogue?categorie=${product.categorie}`} className="hover:text-rouge transition-colors">
           {cat.label}s
         </Link>
         <ChevronRight className="w-3 h-3" />
@@ -126,7 +126,7 @@ export default function ProductDetailPage() {
                   onClick={() => setSelectedImage(i)}
                   className={`relative w-20 h-20 rounded-lg overflow-hidden border-2 transition-all hover:scale-105 active:scale-95 ${
                     i === selectedImage
-                      ? 'border-or shadow-md'
+                      ? 'border-rouge shadow-md'
                       : 'border-transparent hover:border-sable opacity-70 hover:opacity-100'
                   }`}
                 >
@@ -195,7 +195,7 @@ export default function ProductDetailPage() {
 
           {/* Prix */}
           <div className="flex items-baseline gap-3 mt-4 mb-6">
-            <span className="font-display font-bold text-3xl text-or">
+            <span className="font-display font-bold text-3xl text-jaune">
               {product.prix.toFixed(2)} €
             </span>
             {product.prixBarre && (
@@ -236,8 +236,8 @@ export default function ProductDetailPage() {
                     onClick={() => setSelectedVariante(opt)}
                     className={`px-4 py-2 rounded-lg text-sm font-sans border transition-all hover:scale-[1.03] active:scale-[0.97] ${
                       selectedVariante === opt
-                        ? 'border-or bg-or/10 text-or font-bold shadow-sm'
-                        : 'border-sable/30 text-nuit/70 dark:text-creme/70 hover:border-or/50'
+                        ? 'border-rouge bg-rouge/10 text-rouge font-bold shadow-sm'
+                        : 'border-sable/30 text-nuit/70 dark:text-creme/70 hover:border-rouge/50'
                     }`}
                   >
                     {opt}
@@ -252,7 +252,7 @@ export default function ProductDetailPage() {
             <div className="flex items-center border border-sable/30 rounded-lg bg-creme dark:bg-nuit">
               <button
                 onClick={() => setQuantite(Math.max(1, quantite - 1))}
-                className="w-10 h-10 flex items-center justify-center text-nuit/60 hover:text-or active:scale-90 transition-all"
+                className="w-10 h-10 flex items-center justify-center text-nuit/60 hover:text-rouge active:scale-90 transition-all"
                 aria-label="Diminuer la quantité"
               >
                 <Minus className="w-4 h-4" />
@@ -262,7 +262,7 @@ export default function ProductDetailPage() {
               </span>
               <button
                 onClick={() => setQuantite(Math.min(product.stock, quantite + 1))}
-                className="w-10 h-10 flex items-center justify-center text-nuit/60 hover:text-or active:scale-90 transition-all"
+                className="w-10 h-10 flex items-center justify-center text-nuit/60 hover:text-rouge active:scale-90 transition-all"
                 aria-label="Augmenter la quantité"
               >
                 <Plus className="w-4 h-4" />
@@ -291,7 +291,7 @@ export default function ProductDetailPage() {
           {/* Infos complémentaires */}
           <div className="mt-8 space-y-3 p-5 rounded-xl bg-ivoire dark:bg-nuit-light/50 text-sm">
             <div className="flex gap-3 items-start">
-              <MapPin className="w-4 h-4 text-or shrink-0 mt-0.5" />
+              <MapPin className="w-4 h-4 text-rouge shrink-0 mt-0.5" />
               <div>
                 <span className="font-bold text-nuit dark:text-creme">Origine : </span>
                 <span className="text-nuit/70 dark:text-creme/70">{product.origine}</span>
@@ -299,7 +299,7 @@ export default function ProductDetailPage() {
             </div>
             {product.poids && (
               <div className="flex gap-3 items-start">
-                <Scale className="w-4 h-4 text-or shrink-0 mt-0.5" />
+                <Scale className="w-4 h-4 text-rouge shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-nuit dark:text-creme">Poids : </span>
                   <span className="text-nuit/70 dark:text-creme/70">{product.poids}</span>
@@ -308,7 +308,7 @@ export default function ProductDetailPage() {
             )}
             {product.ingredients.length > 0 && (
               <div className="flex gap-3 items-start">
-                <Leaf className="w-4 h-4 text-or shrink-0 mt-0.5" />
+                <Leaf className="w-4 h-4 text-rouge shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-nuit dark:text-creme">Ingrédients : </span>
                   <span className="text-nuit/70 dark:text-creme/70">
@@ -320,10 +320,10 @@ export default function ProductDetailPage() {
           </div>
 
           {product.conseilsUtilisation && (
-            <div className="mt-3 p-4 rounded-xl bg-or/5 border border-or/20 text-sm flex gap-3 animate-fade-in">
-              <Lightbulb className="w-5 h-5 text-or shrink-0 mt-0.5" />
+            <div className="mt-3 p-4 rounded-xl bg-rouge/5 border border-rouge/20 text-sm flex gap-3 animate-fade-in">
+              <Lightbulb className="w-5 h-5 text-rouge shrink-0 mt-0.5" />
               <div>
-                <span className="font-bold text-or">Conseil d&apos;utilisation : </span>
+                <span className="font-bold text-jaune">Conseil d&apos;utilisation : </span>
                 <span className="text-nuit/70 dark:text-creme/70">
                   {product.conseilsUtilisation}
                 </span>
@@ -349,7 +349,7 @@ export default function ProductDetailPage() {
                   className="p-5 rounded-xl bg-ivoire dark:bg-nuit-light/50 hover:-translate-y-0.5 transition-transform"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-or to-terre flex items-center justify-center text-creme font-serif font-bold text-sm shadow-sm">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-rouge to-jaune flex items-center justify-center text-creme font-serif font-bold text-sm shadow-sm">
                       {av.prenom[0]}
                     </div>
                     <div>

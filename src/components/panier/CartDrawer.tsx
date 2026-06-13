@@ -23,7 +23,7 @@ export default function CartDrawer() {
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-sable/20">
           <h2 className="font-serif text-xl font-bold text-nuit dark:text-creme flex items-center gap-2">
-            <ShoppingBag className="w-5 h-5 text-or" />
+            <ShoppingBag className="w-5 h-5 text-rouge" />
             Mon Panier ({totalItems()})
           </h2>
           <button
@@ -67,13 +67,13 @@ export default function CartDrawer() {
                     {item.variante && (
                       <p className="text-xs text-nuit/50 dark:text-creme/50">{item.variante}</p>
                     )}
-                    <p className="text-or font-bold text-sm mt-1">
+                    <p className="text-rouge font-bold text-sm mt-1">
                       {item.product.prix.toFixed(2)} €
                     </p>
                     <div className="flex items-center gap-2 mt-2">
                       <button
                         onClick={() => updateQuantity(item.product.id, item.quantite - 1)}
-                        className="w-7 h-7 rounded border border-sable/30 flex items-center justify-center text-sm hover:bg-or hover:text-creme hover:border-or hover:scale-110 active:scale-90 transition-all"
+                        className="w-7 h-7 rounded border border-sable/30 flex items-center justify-center text-sm hover:bg-rouge hover:text-creme hover:border-rouge hover:scale-110 active:scale-90 transition-all"
                         aria-label="Diminuer la quantité"
                       >
                         <Minus className="w-3 h-3" />
@@ -83,7 +83,7 @@ export default function CartDrawer() {
                       </span>
                       <button
                         onClick={() => updateQuantity(item.product.id, item.quantite + 1)}
-                        className="w-7 h-7 rounded border border-sable/30 flex items-center justify-center text-sm hover:bg-or hover:text-creme hover:border-or hover:scale-110 active:scale-90 transition-all"
+                        className="w-7 h-7 rounded border border-sable/30 flex items-center justify-center text-sm hover:bg-rouge hover:text-creme hover:border-rouge hover:scale-110 active:scale-90 transition-all"
                         aria-label="Augmenter la quantité"
                       >
                         <Plus className="w-3 h-3" />

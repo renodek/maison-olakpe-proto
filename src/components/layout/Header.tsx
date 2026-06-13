@@ -60,14 +60,14 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group shrink-0">
-            <div className="w-10 h-10 bg-gradient-to-br from-or to-terre rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all">
-              <span className="font-serif font-bold text-creme text-xl">MO</span>
+            <div className="w-10 h-10 bg-gradient-to-br from-rouge to-jaune rounded-lg flex items-center justify-center shadow-md group-hover:shadow-lg group-hover:scale-105 transition-all">
+              <span className="font-serif font-bold text-blanc text-xl">MO</span>
             </div>
             <div className="hidden sm:block">
               <div className="font-serif font-bold text-nuit dark:text-creme text-lg leading-tight">
                 Maison Olakpé
               </div>
-              <div className="font-display text-[10px] uppercase tracking-[0.2em] text-or">
+              <div className="font-display text-[10px] uppercase tracking-[0.2em] text-jaune">
                 Épices • Parfums • Cosmétiques
               </div>
             </div>
@@ -84,13 +84,13 @@ export default function Header() {
                   className={cn(
                     'relative px-3 py-2 text-sm font-sans rounded-lg transition-colors duration-200',
                     isActive
-                      ? 'text-or font-bold'
-                      : 'text-nuit/70 dark:text-creme/70 hover:text-or hover:bg-or/5'
+                      ? 'text-rouge font-bold'
+                      : 'text-nuit/70 dark:text-creme/70 hover:text-rouge hover:bg-rouge/5'
                   )}
                 >
                   {link.label}
                   {isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-or rounded-full" />
+                    <span className="absolute bottom-0 left-3 right-3 h-0.5 bg-rouge rounded-full" />
                   )}
                 </Link>
               );
@@ -101,7 +101,7 @@ export default function Header() {
           <div className="flex items-center gap-2">
             {/* Devise */}
             <select
-              className="hidden sm:block bg-transparent text-xs font-sans text-nuit/60 dark:text-creme/60 border border-sable/30 rounded px-2 py-1 cursor-pointer focus:outline-none focus:border-or"
+              className="hidden sm:block bg-transparent text-xs font-sans text-nuit/60 dark:text-creme/60 border border-sable/30 rounded px-2 py-1 cursor-pointer focus:outline-none focus:border-rouge"
               defaultValue="EUR"
             >
               <option value="EUR">€ EUR</option>
@@ -112,7 +112,7 @@ export default function Header() {
             {/* Thème */}
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg text-nuit/60 dark:text-creme/60 hover:text-or hover:bg-or/5 hover:scale-110 active:scale-90 transition-all"
+              className="p-2 rounded-lg text-nuit/60 dark:text-creme/60 hover:text-rouge hover:bg-rouge/5 hover:scale-110 active:scale-90 transition-all"
               aria-label={theme === 'light' ? 'Activer le mode sombre' : 'Activer le mode clair'}
             >
               {theme === 'light' ? (
@@ -125,12 +125,12 @@ export default function Header() {
             {/* Panier */}
             <button
               onClick={toggleCart}
-              className="relative p-2 rounded-lg text-nuit/60 dark:text-creme/60 hover:text-or hover:bg-or/5 hover:scale-110 active:scale-90 transition-all"
+              className="relative p-2 rounded-lg text-nuit/60 dark:text-creme/60 hover:text-rouge hover:bg-rouge/5 hover:scale-110 active:scale-90 transition-all"
               aria-label={`Panier – ${itemCount} article${itemCount > 1 ? 's' : ''}`}
             >
               <ShoppingBag className="w-6 h-6" />
               {itemCount > 0 && (
-                <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-terre text-creme text-[10px] font-bold rounded-full flex items-center justify-center animate-bounce-small">
+                <span className="absolute -top-0.5 -right-0.5 w-5 h-5 bg-rouge text-blanc text-[10px] font-bold rounded-full flex items-center justify-center animate-bounce-small">
                   {itemCount}
                 </span>
               )}
@@ -139,7 +139,7 @@ export default function Header() {
             {/* Menu mobile */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="lg:hidden p-2 rounded-lg text-nuit/60 dark:text-creme/60 hover:text-or active:scale-90 transition-all"
+              className="lg:hidden p-2 rounded-lg text-nuit/60 dark:text-creme/60 hover:text-rouge active:scale-90 transition-all"
               aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
               aria-expanded={mobileOpen}
             >
@@ -160,15 +160,15 @@ export default function Header() {
                 className={cn(
                   'block px-4 py-3 text-sm font-sans rounded-lg transition-colors',
                   pathname === link.href
-                    ? 'text-or font-bold bg-or/10'
-                    : 'text-nuit/70 dark:text-creme/70 hover:text-or hover:bg-or/5'
+                    ? 'text-rouge font-bold bg-rouge/10'
+                    : 'text-nuit/70 dark:text-creme/70 hover:text-rouge hover:bg-rouge/5'
                 )}
               >
                 {link.label}
               </Link>
             ))}
             <select
-              className="bg-transparent text-xs font-sans text-nuit/60 dark:text-creme/60 border border-sable/30 rounded px-4 py-2 mt-2 w-full focus:outline-none focus:border-or"
+              className="bg-transparent text-xs font-sans text-nuit/60 dark:text-creme/60 border border-sable/30 rounded px-4 py-2 mt-2 w-full focus:outline-none focus:border-rouge"
               defaultValue="EUR"
             >
               <option value="EUR">€ EUR</option>

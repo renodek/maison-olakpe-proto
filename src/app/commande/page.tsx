@@ -133,11 +133,11 @@ export default function CommandePage() {
 
           <div className="p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50 inline-block mb-8">
             <p className="text-xs text-nuit/50 dark:text-creme/50 mb-1">N° de commande</p>
-            <p className="font-display font-bold text-2xl text-or tracking-wider">{orderNumber}</p>
+            <p className="font-display font-bold text-2xl text-rouge tracking-wider">{orderNumber}</p>
           </div>
 
           <div className="flex items-center justify-center gap-2 text-sm text-nuit/40 dark:text-creme/40 mb-8">
-            <PartyPopper className="w-4 h-4 text-or" />
+            <PartyPopper className="w-4 h-4 text-rouge" />
             L&apos;équipe Maison Olakpé vous remercie pour votre confiance
           </div>
 
@@ -194,9 +194,9 @@ export default function CommandePage() {
   return (
     <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
       <nav className="text-xs text-nuit/50 dark:text-creme/50 mb-6 font-sans flex items-center gap-1.5">
-        <Link href="/" className="hover:text-or transition-colors">Accueil</Link>
+        <Link href="/" className="hover:text-rouge transition-colors">Accueil</Link>
         <ChevronRight className="w-3 h-3" />
-        <Link href="/panier" className="hover:text-or transition-colors">Panier</Link>
+        <Link href="/panier" className="hover:text-rouge transition-colors">Panier</Link>
         <ChevronRight className="w-3 h-3" />
         <span className="text-nuit dark:text-creme font-medium">Commande</span>
       </nav>
@@ -216,7 +216,7 @@ export default function CommandePage() {
                 onClick={() => { if (isCompleted) { setStep(s.key); setErrors({}); } }}
                 className={cn(
                   'flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all',
-                  isActive && 'bg-or text-creme shadow-lg scale-105',
+                  isActive && 'bg-rouge text-blanc shadow-lg scale-105',
                   isCompleted && 'bg-vert/10 text-vert cursor-pointer hover:bg-vert/20',
                   !isActive && !isCompleted && 'bg-ivoire dark:bg-nuit-light text-nuit/40 dark:text-creme/40'
                 )}
@@ -246,7 +246,7 @@ export default function CommandePage() {
           {step === 'adresse' && (
             <div className="space-y-4 p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50 animate-fade-in">
               <h2 className="font-serif text-xl font-bold text-nuit dark:text-creme mb-4 flex items-center gap-2">
-                <MapPin className="w-5 h-5 text-or" />
+                <MapPin className="w-5 h-5 text-rouge" />
                 Adresse de livraison
               </h2>
 
@@ -270,7 +270,7 @@ export default function CommandePage() {
                           'w-full bg-creme dark:bg-nuit border rounded-lg pl-10 pr-4 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:ring-1 transition-all',
                           errors[f.field] && touched.has(f.field)
                             ? 'border-bordeaux focus:border-bordeaux focus:ring-bordeaux/30'
-                            : 'border-sable/20 focus:border-or focus:ring-or/30'
+                            : 'border-sable/20 focus:border-rouge focus:ring-or/30'
                         )}
                         placeholder={f.placeholder}
                       />
@@ -288,7 +288,7 @@ export default function CommandePage() {
                     <input type="text" value={form.adresse} onChange={(e) => updateForm('adresse', e.target.value)} onBlur={() => handleBlur('adresse')}
                       className={cn(
                         'w-full bg-creme dark:bg-nuit border rounded-lg pl-10 pr-4 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:ring-1 transition-all',
-                        errors.adresse && touched.has('adresse') ? 'border-bordeaux focus:border-bordeaux focus:ring-bordeaux/30' : 'border-sable/20 focus:border-or focus:ring-or/30'
+                        errors.adresse && touched.has('adresse') ? 'border-bordeaux focus:border-bordeaux focus:ring-bordeaux/30' : 'border-sable/20 focus:border-rouge focus:ring-or/30'
                       )} placeholder="15 Rue des Épices" />
                   </div>
                   {errors.adresse && touched.has('adresse') && (
@@ -308,7 +308,7 @@ export default function CommandePage() {
                       <input type="text" value={form[f.field]} onChange={(e) => updateForm(f.field, e.target.value)} onBlur={() => handleBlur(f.field)}
                         className={cn(
                           'w-full bg-creme dark:bg-nuit border rounded-lg pl-10 pr-4 py-2.5 text-sm text-nuit dark:text-creme placeholder:text-nuit/30 focus:outline-none focus:ring-1 transition-all',
-                          errors[f.field] && touched.has(f.field) ? 'border-bordeaux focus:border-bordeaux focus:ring-bordeaux/30' : 'border-sable/20 focus:border-or focus:ring-or/30'
+                          errors[f.field] && touched.has(f.field) ? 'border-bordeaux focus:border-bordeaux focus:ring-bordeaux/30' : 'border-sable/20 focus:border-rouge focus:ring-or/30'
                         )} placeholder={f.placeholder} />
                     </div>
                     {errors[f.field] && touched.has(f.field) && (
@@ -324,7 +324,7 @@ export default function CommandePage() {
           {step === 'livraison' && (
             <div className="space-y-4 p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50 animate-fade-in">
               <h2 className="font-serif text-xl font-bold text-nuit dark:text-creme mb-4 flex items-center gap-2">
-                <Truck className="w-5 h-5 text-or" />
+                <Truck className="w-5 h-5 text-rouge" />
                 Mode de livraison
               </h2>
               <div className="space-y-3">
@@ -335,15 +335,15 @@ export default function CommandePage() {
                       key={c.id}
                       className={cn(
                         'flex items-center gap-4 p-4 rounded-lg border-2 cursor-pointer transition-all hover:scale-[1.01] active:scale-[0.99]',
-                        delivery === c.tarif ? 'border-or bg-or/5 shadow-sm' : 'border-sable/20 hover:border-sable/60'
+                        delivery === c.tarif ? 'border-rouge bg-rouge/5 shadow-sm' : 'border-sable/20 hover:border-sable/60'
                       )}
                     >
-                      <input type="radio" name="carrier" checked={delivery === c.tarif} onChange={() => setDelivery(c.tarif)} className="accent-or w-4 h-4" />
+                      <input type="radio" name="carrier" checked={delivery === c.tarif} onChange={() => setDelivery(c.tarif)} className="accent-rouge w-4 h-4" />
                       <div className="flex-1">
                         <p className="font-sans font-bold text-nuit dark:text-creme">{c.nom}</p>
                         <p className="text-xs text-nuit/50 dark:text-creme/50">{c.delai}</p>
                       </div>
-                      <span className="font-display font-bold text-or">
+                      <span className="font-display font-bold text-jaune">
                         {isFree ? (
                           <span className="text-vert flex items-center gap-1">
                             Gratuit
@@ -362,14 +362,14 @@ export default function CommandePage() {
           {step === 'paiement' && (
             <div className="space-y-4 p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50 animate-fade-in">
               <h2 className="font-serif text-xl font-bold text-nuit dark:text-creme mb-4 flex items-center gap-2">
-                <CreditCard className="w-5 h-5 text-or" />
+                <CreditCard className="w-5 h-5 text-rouge" />
                 Paiement sécurisé
               </h2>
 
-              <div className="p-4 rounded-lg bg-or/5 border border-or/20 text-sm text-nuit/70 dark:text-creme/70 mb-4 flex items-start gap-3">
-                <ShieldCheck className="w-5 h-5 text-or shrink-0 mt-0.5" />
+              <div className="p-4 rounded-lg bg-rouge/5 border border-rouge/20 text-sm text-nuit/70 dark:text-creme/70 mb-4 flex items-start gap-3">
+                <ShieldCheck className="w-5 h-5 text-rouge shrink-0 mt-0.5" />
                 <div>
-                  <strong className="text-or">Simulation :</strong> Aucun paiement réel ne sera effectué. Cette étape est une démonstration du tunnel de commande.
+                  <strong className="text-rouge">Simulation :</strong> Aucun paiement réel ne sera effectué. Cette étape est une démonstration du tunnel de commande.
                 </div>
               </div>
 
@@ -379,26 +379,26 @@ export default function CommandePage() {
                   <div className="relative">
                     <CreditCard className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-nuit/30" />
                     <input type="text" defaultValue="4242 4242 4242 4242"
-                      className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm font-mono tracking-wider focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all" />
+                      className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm font-mono tracking-wider focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all" />
                   </div>
                 </div>
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="text-xs font-bold text-nuit/60 dark:text-creme/60 block mb-1.5">Expiration</label>
                     <input type="text" defaultValue="12/28"
-                      className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all" />
+                      className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg px-3 py-2.5 text-sm focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all" />
                   </div>
                   <div>
                     <label className="text-xs font-bold text-nuit/60 dark:text-creme/60 block mb-1.5">CVC</label>
                     <div className="relative">
                       <Lock className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-nuit/30" />
                       <input type="text" defaultValue="123"
-                        className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-or focus:ring-1 focus:ring-or/30 transition-all" />
+                        className="w-full bg-creme dark:bg-nuit border border-sable/20 rounded-lg pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:border-rouge focus:ring-1 focus:ring-or/30 transition-all" />
                     </div>
                   </div>
                 </div>
                 <label className="flex items-center gap-2 text-xs text-nuit/60 dark:text-creme/60 cursor-pointer">
-                  <input type="checkbox" defaultChecked className="accent-or rounded" />
+                  <input type="checkbox" defaultChecked className="accent-rouge rounded" />
                   Enregistrer cette carte pour vos prochains achats (simulé)
                 </label>
               </div>
@@ -432,7 +432,7 @@ export default function CommandePage() {
         <div>
           <div className="sticky top-28 p-6 rounded-xl bg-ivoire dark:bg-nuit-light/50 border border-sable/10">
             <h3 className="font-serif font-bold text-nuit dark:text-creme mb-4 flex items-center gap-2">
-              <ShoppingBag className="w-5 h-5 text-or" />
+              <ShoppingBag className="w-5 h-5 text-rouge" />
               Votre commande
             </h3>
             <div className="space-y-2 max-h-60 overflow-y-auto mb-4">
@@ -442,7 +442,7 @@ export default function CommandePage() {
                   <div className="flex-1 min-w-0">
                     <p className="truncate text-nuit dark:text-creme text-xs font-medium">{item.product.nom}</p>
                     <p className="text-nuit/50 text-[10px]">x{item.quantite}</p>
-                    <p className="text-or font-bold text-xs">{(item.product.prix * item.quantite).toFixed(2)} €</p>
+                    <p className="text-rouge font-bold text-xs">{(item.product.prix * item.quantite).toFixed(2)} €</p>
                   </div>
                 </div>
               ))}
@@ -453,7 +453,7 @@ export default function CommandePage() {
               {discount() > 0 && <div className="flex justify-between text-vert"><span>Réduction</span><span>-{discount().toFixed(2)} €</span></div>}
               <div className="flex justify-between"><span className="text-nuit/60 dark:text-creme/60">Livraison</span><span className="font-bold">{promoCode?.type === 'livraison' ? <span className="text-vert">Offerte</span> : `${delivery.toFixed(2)} €`}</span></div>
               <hr className="border-sable/20" />
-              <div className="flex justify-between text-base"><span className="font-bold">Total</span><span className="font-display font-bold text-or">{finalTotal.toFixed(2)} €</span></div>
+              <div className="flex justify-between text-base"><span className="font-bold">Total</span><span className="font-display font-bold text-jaune">{finalTotal.toFixed(2)} €</span></div>
             </div>
           </div>
         </div>
